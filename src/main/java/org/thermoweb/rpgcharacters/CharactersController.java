@@ -20,8 +20,8 @@ public class CharactersController {
 
     public CharactersController() {
         characterRepository = new HashMap<>(Map.of(
-                1, new CharacterDto(1, "chronie", "wizard", 0, 6, List.of(new QuestDto(1, "seak and destroy bad developer", "taken", 10))),
-                2, new CharacterDto(2, "lilipu", "cleric", 0, 8, List.of(new QuestDto(1, "kill the architect lich", "taken", 30)))
+                1, new CharacterDto(1, "chronie", Role.WIZARD, 0, 6, List.of(new QuestDto(1, "seak and destroy bad developer", "taken", 10))),
+                2, new CharacterDto(2, "lilipu", Role.CLERIC, 0, 8, List.of(new QuestDto(1, "kill the architect lich", "taken", 30)))
         ));
     }
 
@@ -36,10 +36,12 @@ public class CharactersController {
     }
 
     @PostMapping
-    public CharacterDto createCharacter(@RequestBody CharacterDto characterDto) {
+    public CharacterDto createCharacter(@RequestBody CreateCharacterRequest createCharacterRequest) {
         Integer newId = Collections.max(characterRepository.keySet()) + 1;
-        CharacterDto dbCharacter = characterDto.toBuilder()
+        CharacterDto dbCharacter = CharacterDto.builder()
                 .id(newId)
+                .name(createCharacterRequest.name())
+                .role(createCharacterRequest.role())
                 .experience(0)
                 .hitpoints(10)
                 .build();

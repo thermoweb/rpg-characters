@@ -11,5 +11,5 @@ Content-Type: application/json
 
 {
   "name": "Galwyn",
-  "role": "bard"
+  "role": "BARD"
 }
