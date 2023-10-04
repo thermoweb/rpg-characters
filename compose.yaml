@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=rpg-characters'
+      - 'POSTGRES_PASSWORD=wizard'
+      - 'POSTGRES_USER=rpg-admin'
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      # copy the sql script to create tables
+      - ./src/main/resources/db/scripts/init-db.sql:/docker-entrypoint-initdb.d/create_tables.sql
