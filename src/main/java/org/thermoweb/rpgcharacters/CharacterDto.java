@@ -5,5 +5,5 @@ import java.util.List;
 import lombok.Builder;
 
 @Builder(toBuilder = true)
-public record CharacterDto(Integer id, String name, Role role, Integer experience, Integer hitpoints, List<QuestDto> quests) {
+public record CharacterDto(Long id, String name, Role role, Integer experience, Integer hitpoints, List<QuestDto> quests) {
 }

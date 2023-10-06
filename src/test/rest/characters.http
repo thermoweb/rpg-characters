@@ -5,11 +5,15 @@ GET http://localhost:8080/rest/characters
 GET http://localhost:8080/rest/characters/2
 
 
+### get one character by id
+GET http://localhost:8080/rest/characters/8
+
+
 ### create new character
 POST http://localhost:8080/rest/characters
 Content-Type: application/json
 
 {
-  "name": "Galwyn",
+  "name": "Galwyn 2",
   "role": "BARD"
 }
