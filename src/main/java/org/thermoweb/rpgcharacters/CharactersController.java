@@ -42,6 +42,9 @@ public class CharactersController {
                 .experience(0)
                 .hitpoints(10)
                 .build();
+
+        CreateCharacterRequest request = CreateCharacterRequest.builder().name("test").build();
+        createCharacterRequest.toBuilder().name("test").build();
         return repository.save(entity);
     }
 }
