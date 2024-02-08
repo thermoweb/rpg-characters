@@ -20,7 +20,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Characters {
+public class Characters implements GenericEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "characters_id_seq")
     private Long id;

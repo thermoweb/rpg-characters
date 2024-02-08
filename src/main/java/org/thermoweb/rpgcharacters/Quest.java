@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "quests")
-public class Quest {
+public class Quest implements GenericEntity {
     @Id
     private Long id;
 

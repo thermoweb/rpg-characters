@@ -17,9 +17,13 @@ import jakarta.transaction.Transactional;
 public class CharactersController {
 
     private final CharactersRepository repository;
+    private final EntityService<Quest> questService;
+    private final EntityService<Characters> charactersService;
 
-    public CharactersController(CharactersRepository repository) {
+    public CharactersController(CharactersRepository repository, EntityService<Quest> questService, EntityService<Characters> charactersService) {
         this.repository = repository;
+        this.questService = questService;
+        this.charactersService = charactersService;
     }
 
     @GetMapping
